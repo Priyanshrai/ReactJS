@@ -5,11 +5,17 @@ export const AddTodo = ({addTodo}) => {
     const [desc, setDesc] = useState("");
 
     const submit = (e) => {
-        e.preventDefaut();
+        e.preventDefault();
         if (!title || !desc) {
             alert("Title or Description Cannot Be Blank");
         }
-        addTodo(title, desc);
+        else{
+            addTodo(title, desc);
+        setTitle("");
+        setDesc("");
+
+        }
+        
     };
 
     return (
